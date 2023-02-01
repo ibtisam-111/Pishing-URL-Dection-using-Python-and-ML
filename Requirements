@@ -1,0 +1,6 @@
+For Windows users, run the following at a CMD prompt to automatically download and install our CLI, the State Tool along with the COVID Simulation runtime into a virtual environment:
+
+powershell -Command "& $([scriptblock]::Create((New-Object Net.WebClient).DownloadString('https://platform.activestate.com/dl/cli/install.ps1'))) -activate-default Pizza-Team/Phishing-URL-Detection"
+For Linux users, run the following to automatically download and install our CLI, the State Tool along with the COVID Simulation runtime into a virtual environment:
+
+sh <(curl -q https://platform.activestate.com/dl/cli/install.sh) --activate-default Pizza-Team/Phishing-URL-Detection
