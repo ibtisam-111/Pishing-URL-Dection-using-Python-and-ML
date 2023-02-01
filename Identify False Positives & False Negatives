@@ -1,0 +1,21 @@
+The results of any decision tree evaluation are likely to contain both false positives (URLs that are actually valid, but that our model indicates are not), as well as false negatives (URLs that are actually bad, but our model indicates are fine). To help resolve these instances, let’s draw out a confusion matrix (a table with 4 different combinations of predicted and actual values) for our results. The matrix will help us identify:
+
+True Positives
+True Negatives
+False Positives (Type 1 Error)
+False Negatives (Type 2 Error)
+mat = confusion_matrix(ytest, ypred)
+
+sns.heatmap(mat.T, square=True, annot=True, fmt='d', cbar=False)
+
+plt.xlabel('true label')
+
+plt.ylabel('predicted label');
+
+plt.savefig(confusion_matrix_file)
+As you can see, the number of false positives and false negatives are pretty low compared to our true positives and negatives, so we can be pretty sure of our results.
+
+To see how the decision tree panned out in making these decisions, we can visualize it with sklearn, matplotlib and sns.
+
+export_graphviz(model, out_file=dot_file, feature_names=X.columns.values)
+>> dot -Tpng tree.dot -o tree.png
