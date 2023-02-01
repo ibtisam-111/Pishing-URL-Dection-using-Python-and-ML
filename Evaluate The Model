@@ -1,0 +1,24 @@
+Now that the model is trained, let’s see how well it does on the test data:
+
+ypred = model.predict(Xtest)
+
+print(metrics.classification_report(ypred, ytest))
+
+print("\n\nAccuracy Score:", metrics.accuracy_score(ytest, ypred).round(2)*100, "%")
+We used the model to predict Xtest data. Now let’s compare the results to ytest and see how well we did:
+
+             precision    recall  f1-score   support
+
+         -1       0.95      0.95      0.95      1176
+
+          1       0.96      0.96      0.96      1588
+
+
+  micro avg       0.96      0.96      0.96      2764
+
+  macro avg       0.96      0.96      0.96      2764
+
+weighted avg       0.96      0.96      0.96      2764
+
+
+Accuracy Score: 96.0 %
