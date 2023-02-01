@@ -1,0 +1,48 @@
+# To perform operations on dataset
+
+import pandas as pd
+
+import numpy as np
+
+
+
+# Machine learning model
+
+from sklearn.model_selection import train_test_split
+
+from sklearn.tree import DecisionTreeClassifier
+
+
+
+# Visualization
+
+from sklearn import metrics
+
+from sklearn.metrics import confusion_matrix
+
+import matplotlib.pyplot as plt
+
+import seaborn as sns
+
+from sklearn.tree import export_graphviz
+Next we read and split the dataset:
+
+df = pd.read_csv('.../dataset.csv')
+
+dot_file = '.../tree.dot'
+
+confusion_matrix_file = '.../confusion_matrix.png'
+And then print the results:
+
+print(df.head())
+-1  1  1.1  1.2  -1.1  -1.2  -1.3  -1.4  -1.5  1.3  1.4  -1.6  1.5  -1.7  1.6     ...    -1.9  -1.10  0  1.7  1.8  1.9  1.10  -1.11  -1.12  -1.13  -1.14  1.11  1.12  -1.15  -1.16
+
+0   1  1    1    1     1    -1     0     1    -1    1    1    -1    1     0   -1  ...       1      1  0    1    1    1     1     -1     -1      0     -1     1     1      1     -1
+
+1   1  0    1    1     1    -1    -1    -1    -1    1    1    -1    1     0   -1  ...      -1     -1  0    1    1    1     1      1     -1      1     -1     1     0     -1     -1
+
+2   1  0    1    1     1    -1    -1    -1     1    1    1    -1   -1     0    0  ...       1      1  0    1    1    1     1     -1     -1      1     -1     1    -1      1     -1
+
+3   1  0   -1    1     1    -1     1     1    -1    1    1     1    1     0    0  ...       1      1  0   -1    1   -1     1     -1     -1      0     -1     1     1      1      1
+
+4  -1  0   -1    1    -1    -1     1     1    -1    1    1    -1    1     0    0  ...      -1     - -1  0    1    1    1     1      1      1      1     -1     1    -1     -1      1
