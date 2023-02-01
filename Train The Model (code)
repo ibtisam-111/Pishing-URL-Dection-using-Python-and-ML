@@ -1,0 +1,13 @@
+As always, the first step in training a machine learning model is to split the dataset into testing and training data:
+
+X = df.iloc[:, :-1]
+
+y = df.iloc[:, -1]
+
+
+Xtrain, Xtest, ytrain, ytest = train_test_split(X, y, random_state=0)
+Since the dataset contains boolean data, it’s always best to use a Decision Tree, RandomForest Classifier or Logistic Regression algorithm since these models work best for classification. In this case, I chose to work with a Decision Tree, because it’s straightforward and generally gives the best results when trying to classify data.
+
+model = DecisionTreeClassifier()
+
+model.fit(Xtrain, ytrain)
